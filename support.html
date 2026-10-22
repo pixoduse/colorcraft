@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Colorcraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #FFFDF9;
+      --surface:   #FFF8F0;
+      --border:    #F0E4D0;
+      --text:      #2C2416;
+      --text-mute: #6B5A45;
+      --link:      #2196F3;
+
+      --header-h: 56px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:        #1A1A1A;
+        --surface:   #242018;
+        --border:    #3A3226;
+        --text:      #E8E0D5;
+        --text-mute: #A09080;
+        --link:      #2196F3;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: #2196F3;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .site-header a.back {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: .9;
+      white-space: nowrap;
+    }
+    .site-header a.back:hover { opacity: 1; text-decoration: underline; }
+    .site-header .header-title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 16px 64px;
+      text-align: center;
+    }
+
+    .doc-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -.02em;
+    }
+    .lead {
+      font-size: 17px;
+      color: var(--text-mute);
+      margin-bottom: 32px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .contact-card a {
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+    .contact-card p {
+      color: var(--text-mute);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a class="back" href="index.html">← Back</a>
+  <span class="header-title">Support – Colorcraft</span>
+</header>
+
+<main class="page-wrap">
+  <h1 class="doc-title">Support</h1>
+  <p class="lead">Questions or feedback? We're happy to help.</p>
+
+  <div class="contact-card">
+    <a href="mailto:pixoduse@gmail.com">pixoduse@gmail.com</a>
+    <p>We usually reply within 1–2 business days.</p>
+  </div>
+</main>
+</body>
+</html>

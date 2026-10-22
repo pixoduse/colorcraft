@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Colorcraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens ────────────────────────────────────────────── */
+    :root {
+      --amber:   #F5A623;
+      --coral:   #E8705A;
+      --amber-dk: #D4901E;
+      --coral-dk: #C95E48;
+
+      --bg:        #FFFDF9;
+      --surface:   #FFF8F0;
+      --border:    #F0E4D0;
+      --text:      #2C2416;
+      --text-mute: #6B5A45;
+      --link:      #2196F3;
+
+      --header-h: 56px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:        #1A1A1A;
+        --surface:   #242018;
+        --border:    #3A3226;
+        --text:      #E8E0D5;
+        --text-mute: #A09080;
+        --link:      #2196F3;
+        --amber:     #D4901E;
+        --coral:     #C95E48;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg:        #1A1A1A;
+      --surface:   #242018;
+      --border:    #3A3226;
+      --text:      #E8E0D5;
+      --text-mute: #A09080;
+      --link:      #2196F3;
+      --amber:     #D4901E;
+      --coral:     #C95E48;
+    }
+
+    /* ── Reset & base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Sticky header ────────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: #2196F3;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .site-header a.back {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: .9;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .site-header a.back:hover { opacity: 1; text-decoration: underline; }
+    .site-header .header-title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 16px 64px;
+    }
+
+    /* ── Date badge ───────────────────────────────────────────────── */
+    .date-badge {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-mute);
+      padding: 4px 14px;
+      margin-bottom: 32px;
+    }
+
+    /* ── Document title ───────────────────────────────────────────── */
+    .doc-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+    .doc-subtitle {
+      font-size: 16px;
+      color: var(--text-mute);
+      margin-bottom: 32px;
+    }
+
+    /* ── Sections ─────────────────────────────────────────────────── */
+    section { margin-bottom: 40px; }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    a { color: var(--link); }
+    a:hover { text-decoration: none; }
+
+    /* ── Info box ─────────────────────────────────────────────────── */
+    .info-box {
+      background: var(--surface);
+      border-left: 4px solid #2196F3;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-mute);
+    }
+    .site-footer a {
+      color: var(--link);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────── -->
+<header class="site-header">
+  <a class="back" href="index.html">← Back to App</a>
+  <span class="header-title">Privacy Policy – Colorcraft</span>
+</header>
+
+<!-- ── Main content ────────────────────────────────────────────── -->
+<main class="page-wrap">
+
+  <h1 class="doc-title">Privacy Policy</h1>
+  <p class="doc-subtitle">Colorcraft by Ukodes</p>
+  <span class="date-badge">Last Updated: October 22, 2026 · Effective: October 22, 2026</span>
+
+  <!-- 1. Introduction -->
+  <section id="introduction">
+    <h2>1. Introduction</h2>
+    <p>
+      Colorcraft is a paint-by-numbers coloring application for iOS, developed and operated by
+      <strong>Ukodes</strong> ("we," "us," or "our"), an independent developer reachable at
+      <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a>. Ukodes acts as the data controller
+      for any personal information collected through the app.
+    </p>
+    <p>
+      This Privacy Policy explains what information we collect when you use Colorcraft, how we use it,
+      who we share it with, and the choices you have. We are committed to protecting your privacy and
+      handling your data transparently and responsibly.
+    </p>
+    <p>
+      By downloading or using Colorcraft, you acknowledge that you have read and understood this
+      Privacy Policy. If you do not agree, please discontinue use of the app.
+    </p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section id="information-we-collect">
+    <h2>2. Information We Collect</h2>
+
+    <h3>2.1 Coloring Progress via iCloud / SwiftData</h3>
+    <p>
+      Colorcraft saves your coloring progress — including which images you have opened, which zones
+      you have colored, your chosen color selections, and completion states — directly on your device
+      using Apple's SwiftData framework. If you have iCloud enabled for Colorcraft, this progress
+      data is automatically synced to your iCloud account so you can continue coloring seamlessly
+      across your Apple devices.
+    </p>
+    <p>
+      We do <strong>not</strong> require you to create an account. We do <strong>not</strong> store
+      your coloring data on our own servers. This data lives exclusively in your device's local
+      storage and, optionally, in your personal iCloud account — which is governed by Apple's
+      Privacy Policy.
+    </p>
+
+    <h3>2.2 Advertising Data (AdMob) — Free Users Only</h3>
+    <p>
+      Free users of Colorcraft see advertisements served by <strong>Google AdMob</strong>, Google's
+      mobile advertising platform. To serve relevant ads, AdMob may collect and process the
+      following information from your device:
+    </p>
+    <ul>
+      <li><strong>Advertising Identifier (IDFA)</strong> — Apple's device-level ad tracking identifier, used for ad personalization and frequency capping.</li>
+      <li><strong>Device information</strong> — device model, operating system version, screen size, language, and time zone.</li>
+      <li><strong>IP address</strong> — used for approximate geographic location to serve regionally relevant ads and comply with regulations.</li>
+      <li><strong>App usage signals</strong> — interactions with ads shown within Colorcraft (e.g., impressions, taps).</li>
+    </ul>
+    <p>
+      AdMob's collection and use of this data is governed by
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+      If you purchase a subscription, ads are removed and AdMob data collection for personalization
+      ceases for your session.
+    </p>
+
+    <h3>2.3 App Tracking Transparency (ATT)</h3>
+    <p>
+      In compliance with Apple's App Tracking Transparency framework (iOS 14.5+), Colorcraft displays
+      a permission prompt the first time you launch the app asking whether you consent to tracking
+      across apps and websites owned by other companies. Specifically, this relates to AdMob's use
+      of your IDFA for cross-app ad personalization.
+    </p>
+    <ul>
+      <li>If you <strong>allow</strong> tracking: AdMob may use your IDFA to deliver personalized ads based on your activity across other apps.</li>
+      <li>If you <strong>deny</strong> tracking: AdMob will still show ads, but they will not be personalized using your IDFA. You may still see contextual ads based on app content.</li>
+    </ul>
+    <p>
+      You can change your tracking preference at any time in <strong>Settings → Privacy &amp; Security
+      → Tracking</strong> on your iPhone.
+    </p>
+
+    <h3>2.4 Subscription Data</h3>
+    <p>
+      Subscriptions to Colorcraft are managed entirely by <strong>Apple App Store</strong> through
+      Apple's StoreKit framework. Apple handles all payment processing, billing, and subscription
+      management. We do <strong>not</strong> receive your credit card number, debit card number,
+      Apple Pay details, or any other payment information. We receive only a confirmation from Apple
+      that your subscription is active, which we use to unlock premium features within the app.
+    </p>
+    <p>
+      For subscription management, cancellation, and billing inquiries, please refer to your
+      Apple ID subscription settings or Apple's support channels.
+    </p>
+  </section>
+
+  <!-- 3. How We Use Information -->
+  <section id="how-we-use">
+    <h2>3. How We Use Information</h2>
+    <p>We use the information described above for the following purposes:</p>
+    <ul>
+      <li><strong>Rendering and syncing your coloring progress</strong> — SwiftData and iCloud enable your artwork to persist and sync across your devices without requiring an account.</li>
+      <li><strong>Serving advertisements to free users</strong> — AdMob data enables us to offer a free tier of the app supported by advertising revenue.</li>
+      <li><strong>Subscription verification</strong> — StoreKit transaction confirmation enables us to unlock premium content for paying subscribers.</li>
+      <li><strong>Improving app performance</strong> — Aggregate, non-identifiable usage patterns may be used to identify crashes or areas for improvement.</li>
+    </ul>
+    <p>
+      We do <strong>not</strong> sell, rent, or trade your personal information to any third party
+      for their own marketing or commercial purposes.
+    </p>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section id="third-parties">
+    <h2>4. Third-Party Services</h2>
+    <p>Colorcraft integrates with the following third-party services, each operating under its own privacy policy:</p>
+
+    <h3>Google AdMob</h3>
+    <p>
+      AdMob is Google's mobile advertising platform used to serve ads to free users of Colorcraft.
+      Google may collect device and behavioral data to deliver personalized advertising. See
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
+      and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob's data practices</a>
+      for full details.
+    </p>
+
+    <h3>Apple iCloud</h3>
+    <p>
+      If you enable iCloud for Colorcraft, your progress data is synced via Apple's CloudKit infrastructure.
+      This data is governed by
+      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+      Apple does not permit Ukodes to access your iCloud data without your explicit consent.
+    </p>
+
+    <h3>Apple App Store / StoreKit</h3>
+    <p>
+      All subscription billing and transaction records are handled by Apple. See
+      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+      for details on how Apple handles your payment and account data.
+    </p>
+  </section>
+
+  <!-- 5. GDPR Rights -->
+  <section id="gdpr">
+    <h2>5. Your Rights under GDPR (EU/EEA Users)</h2>
+    <p>
+      If you are located in the European Union or European Economic Area, you have the following rights
+      under the General Data Protection Regulation (GDPR):
+    </p>
+    <ul>
+      <li><strong>Right of Access</strong> — You may request a copy of the personal data we hold about you.</li>
+      <li><strong>Right to Rectification</strong> — You may request correction of inaccurate personal data.</li>
+      <li><strong>Right to Erasure ("Right to be Forgotten")</strong> — You may request deletion of your personal data where we have no legitimate grounds to retain it.</li>
+      <li><strong>Right to Object</strong> — You may object to processing of your data for direct marketing or based on legitimate interests.</li>
+      <li><strong>Right to Data Portability</strong> — You may request your data in a structured, machine-readable format.</li>
+      <li><strong>Right to Withdraw Consent</strong> — Where processing is based on consent (e.g., ATT/IDFA), you may withdraw consent at any time via device Settings.</li>
+    </ul>
+    <p>
+      To exercise any of these rights, contact us at
+      <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a>. We will respond within 30 days.
+      Note that most of your coloring data is stored locally on your device and in your own iCloud;
+      deleting the app and purging iCloud data for Colorcraft is the most direct way to erase it.
+    </p>
+  </section>
+
+  <!-- 6. CCPA Rights -->
+  <section id="ccpa">
+    <h2>6. Your Rights under CCPA (California Residents)</h2>
+    <p>
+      If you are a California resident, the California Consumer Privacy Act (CCPA) grants you
+      the following rights:
+    </p>
+    <ul>
+      <li><strong>Right to Know</strong> — You may request disclosure of the categories and specific pieces of personal information we have collected about you in the past 12 months.</li>
+      <li><strong>Right to Delete</strong> — You may request deletion of personal information we have collected from you, subject to certain exceptions.</li>
+      <li><strong>Right to Opt Out of Sale</strong> — We do <strong>not</strong> sell your personal information. No opt-out is required, but you have this right should our practices change.</li>
+      <li><strong>Right to Non-Discrimination</strong> — We will not discriminate against you for exercising your CCPA rights.</li>
+    </ul>
+    <p>
+      To submit a CCPA request, contact us at
+      <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a>.
+    </p>
+  </section>
+
+  <!-- 7. Children's Privacy -->
+  <section id="children">
+    <h2>7. Children's Privacy (COPPA)</h2>
+    <p>
+      Colorcraft is rated for users of all ages on the Apple App Store. We do not knowingly collect
+      personal information from children under the age of 13.
+    </p>
+    <p>
+      With respect to advertising, we have configured AdMob to apply child-directed treatment settings
+      as required under the Children's Online Privacy Protection Act (COPPA) and comparable
+      international regulations. When a user is determined to be under 13 (or where required by
+      applicable law), personalized advertising is disabled and only non-personalized, contextually
+      appropriate ads may be shown.
+    </p>
+    <p>
+      If you are a parent or guardian and believe your child under 13 has provided personal information
+      through the app without your consent, please contact us at
+      <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a> and we will take steps to address it.
+    </p>
+  </section>
+
+  <!-- 8. ATT Detail -->
+  <section id="att">
+    <h2>8. App Tracking Transparency</h2>
+    <p>
+      Apple's App Tracking Transparency (ATT) framework requires apps to obtain explicit permission
+      before tracking users across apps and websites owned by other companies. When you first launch
+      Colorcraft, you will see an iOS system prompt with the message:
+    </p>
+    <div class="info-box">
+      "Allow 'Colorcraft' to track your activity across other companies' apps and websites?"
+    </div>
+    <p>
+      <strong>If you tap "Allow":</strong> AdMob may link your in-app ad interactions with your activity
+      in other apps to deliver ads tailored to your broader interests.
+    </p>
+    <p>
+      <strong>If you tap "Ask App Not to Track":</strong> Your IDFA will not be shared with AdMob for
+      cross-app tracking. You may still see ads, but they will be non-personalized or contextually
+      targeted rather than behaviorally targeted.
+    </p>
+    <p>
+      You can update your tracking preference at any time by going to
+      <strong>Settings → Privacy &amp; Security → Tracking</strong> and toggling Colorcraft on or off.
+    </p>
+  </section>
+
+  <!-- 9. Data Retention -->
+  <section id="retention">
+    <h2>9. Data Retention</h2>
+    <ul>
+      <li>
+        <strong>Coloring progress (SwiftData / iCloud):</strong> Your data is retained on your device
+        and in your iCloud account for as long as you keep the app installed and iCloud syncing enabled.
+        Deleting Colorcraft from your device removes the local data. To also remove iCloud data,
+        go to <strong>Settings → [Your Name] → iCloud → Manage Account Storage</strong> and delete
+        Colorcraft's iCloud data.
+      </li>
+      <li>
+        <strong>Advertising data (AdMob / Google):</strong> AdMob retains ad interaction and device
+        data per
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's data retention policies</a>,
+        which are independent of Ukodes.
+      </li>
+      <li>
+        <strong>Subscription records:</strong> Apple retains transaction records for subscriptions
+        as described in Apple's Privacy Policy. Ukodes does not maintain a separate transaction record.
+      </li>
+    </ul>
+  </section>
+
+  <!-- 10. Contact -->
+  <section id="contact">
+    <h2>10. Contact Us</h2>
+    <p>
+      If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+      practices, please contact us:
+    </p>
+    <ul>
+      <li><strong>Developer / Data Controller:</strong> Ukodes (Andrii)</li>
+      <li><strong>Email:</strong> <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a></li>
+      <li><strong>Privacy Policy URL:</strong> <a href="https://colorcraft.app/privacy">https://colorcraft.app/privacy</a></li>
+    </ul>
+    <p>
+      We aim to respond to all privacy-related inquiries within 30 days of receipt.
+    </p>
+  </section>
+
+  <!-- 11. Changes -->
+  <section id="changes">
+    <h2>11. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices,
+      applicable law, or app functionality. When we make material changes, we will update the
+      "Last Updated" date at the top of this page.
+    </p>
+    <p>
+      For significant changes — such as new categories of data collected or new third-party integrations
+      — we will notify users through an in-app notice or, where required by law, request renewed
+      consent. Continued use of Colorcraft after any changes take effect constitutes your acceptance
+      of the updated policy.
+    </p>
+    <p>
+      We encourage you to review this page periodically to stay informed about how we protect
+      your information.
+    </p>
+  </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div>© 2026 Ukodes. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

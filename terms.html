@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – Colorcraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens ────────────────────────────────────────────── */
+    :root {
+      --amber:   #F5A623;
+      --coral:   #E8705A;
+      --amber-dk: #D4901E;
+      --coral-dk: #C95E48;
+
+      --bg:        #FFFDF9;
+      --surface:   #FFF8F0;
+      --border:    #F0E4D0;
+      --text:      #2C2416;
+      --text-mute: #6B5A45;
+      --link:      #2196F3;
+
+      --header-h: 56px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:        #1A1A1A;
+        --surface:   #242018;
+        --border:    #3A3226;
+        --text:      #E8E0D5;
+        --text-mute: #A09080;
+        --link:      #2196F3;
+        --amber:     #D4901E;
+        --coral:     #C95E48;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg:        #1A1A1A;
+      --surface:   #242018;
+      --border:    #3A3226;
+      --text:      #E8E0D5;
+      --text-mute: #A09080;
+      --link:      #2196F3;
+      --amber:     #D4901E;
+      --coral:     #C95E48;
+    }
+
+    /* ── Reset & base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Sticky header ────────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: #2196F3;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .site-header a.back {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: .9;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .site-header a.back:hover { opacity: 1; text-decoration: underline; }
+    .site-header .header-title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 16px 64px;
+    }
+
+    /* ── Date badge ───────────────────────────────────────────────── */
+    .date-badge {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-mute);
+      padding: 4px 14px;
+      margin-bottom: 32px;
+    }
+
+    /* ── Document title ───────────────────────────────────────────── */
+    .doc-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+    .doc-subtitle {
+      font-size: 16px;
+      color: var(--text-mute);
+      margin-bottom: 32px;
+    }
+
+    /* ── Sections ─────────────────────────────────────────────────── */
+    section { margin-bottom: 40px; }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    a { color: var(--link); }
+    a:hover { text-decoration: none; }
+
+    /* ── Info box ─────────────────────────────────────────────────── */
+    .info-box {
+      background: var(--surface);
+      border-left: 4px solid #2196F3;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    /* ── Warning box ──────────────────────────────────────────────── */
+    .warning-box {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-mute);
+    }
+    .site-footer a {
+      color: var(--link);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────── -->
+<header class="site-header">
+  <a class="back" href="index.html">← Back to App</a>
+  <span class="header-title">Terms of Service – Colorcraft</span>
+</header>
+
+<!-- ── Main content ────────────────────────────────────────────── -->
+<main class="page-wrap">
+
+  <h1 class="doc-title">Terms of Service</h1>
+  <p class="doc-subtitle">Colorcraft by Ukodes</p>
+  <span class="date-badge">Last Updated: October 22, 2026 · Effective: October 22, 2026</span>
+
+  <!-- 1. Acceptance -->
+  <section id="acceptance">
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      These Terms of Service ("Terms") constitute a legally binding agreement between you ("you" or "User")
+      and <strong>Ukodes</strong> ("we," "us," or "our"), the developer of Colorcraft, regarding your
+      use of the Colorcraft iOS application and any related services (collectively, the "App").
+    </p>
+    <p>
+      By downloading, installing, or using the App, you confirm that you are at least 13 years of age
+      (or the applicable age of digital consent in your jurisdiction), that you have the legal capacity
+      to enter into this agreement, and that you agree to be bound by these Terms.
+    </p>
+    <p>
+      If you are using the App on behalf of a minor under your parental or guardian authority, you accept
+      these Terms on behalf of that minor and take full responsibility for their use.
+    </p>
+    <p>
+      If you do not agree to these Terms, please do not download or use the App.
+    </p>
+  </section>
+
+  <!-- 2. License -->
+  <section id="license">
+    <h2>2. License to Use</h2>
+    <p>
+      Subject to your compliance with these Terms, Ukodes grants you a limited, non-exclusive,
+      non-transferable, revocable license to download and use the App solely for your personal,
+      non-commercial purposes on Apple-branded devices that you own or control, and as permitted
+      by the Usage Rules set forth in the Apple App Store Terms of Service.
+    </p>
+    <p>This license does <strong>not</strong> include the right to:</p>
+    <ul>
+      <li>Reproduce, redistribute, sublicense, sell, rent, lease, or lend the App to any third party;</li>
+      <li>Modify, translate, adapt, or create derivative works based on the App or its content;</li>
+      <li>Reverse engineer, disassemble, decompile, or otherwise attempt to derive the source code of the App;</li>
+      <li>Remove, alter, or obscure any proprietary notices, labels, or marks on or within the App;</li>
+      <li>Use the App in any manner that violates applicable laws or regulations;</li>
+      <li>Use automated tools, bots, or scripts to access or interact with the App.</li>
+    </ul>
+    <p>
+      Any use of the App not expressly permitted by these Terms is prohibited and may result in
+      termination of this license and legal action.
+    </p>
+  </section>
+
+  <!-- 3. Content & Ownership -->
+  <section id="content-ownership">
+    <h2>3. App Content &amp; Ownership</h2>
+
+    <h3>3.1 Ukodes Content</h3>
+    <p>
+      All coloring images, artwork, designs, illustrations, line art, color palettes, sound effects,
+      music, interface elements, and other content provided through the App (collectively, "Ukodes
+      Content") are owned by or licensed to Ukodes and protected by copyright, trademark, and other
+      intellectual property laws. All rights are reserved.
+    </p>
+    <p>
+      Your use of the App does not transfer any ownership or intellectual property rights in Ukodes
+      Content to you. You may not reproduce, distribute, publicly display, or create derivative works
+      from Ukodes Content outside the App without our prior written consent.
+    </p>
+
+    <h3>3.2 Your Completed Colorings</h3>
+    <p>
+      When you color an image within the App, the resulting completed artwork is saved to your device
+      via Apple's SwiftData framework and, if iCloud is enabled, to your personal iCloud account.
+      Your completed colorings belong to you and remain under your control at all times.
+    </p>
+    <p>
+      Ukodes does not access, collect, or store your completed colorings on its own servers.
+      You may save, share, or print your completed colorings for personal, non-commercial use.
+      Commercial use of completed colorings derived from Ukodes Content (e.g., selling prints)
+      is not permitted without a separate license agreement.
+    </p>
+  </section>
+
+  <!-- 4. Subscription Terms -->
+  <section id="subscriptions">
+    <h2>4. Subscription Terms</h2>
+
+    <h3>4.1 Available Plans</h3>
+    <p>
+      Colorcraft offers optional auto-renewing subscriptions that remove advertisements and unlock
+      the full ad-free experience. The following subscription tiers may be available:
+    </p>
+    <ul>
+      <li><strong>Monthly Plan</strong> — billed once per month.</li>
+      <li><strong>Yearly Plan</strong> — billed once per year at a discounted rate.</li>
+    </ul>
+    <p>
+      Current pricing is displayed in the App at the time of purchase and is subject to change
+      as described in Section 4.6. All prices are in the local currency of your App Store region
+      and include applicable taxes where required by law.
+    </p>
+
+    <h3>4.2 Auto-Renewal</h3>
+    <p>
+      Subscriptions automatically renew at the end of each billing period unless cancelled by you
+      at least <strong>24 hours before</strong> the end of the current period. Your Apple ID account
+      will be charged for renewal within 24 hours prior to the end of the current period. The renewal
+      fee will be the same as the original subscription price unless we have notified you of a change
+      in advance.
+    </p>
+
+    <h3>4.3 Cancellation</h3>
+    <p>
+      You may cancel your subscription at any time through your Apple ID account settings:
+    </p>
+    <div class="info-box">
+      On your iPhone or iPad: <strong>Settings → [Your Name] → Subscriptions → Colorcraft → Cancel Subscription</strong>
+    </div>
+    <p>
+      Cancellation takes effect at the end of the current billing period. You will retain access to
+      subscription benefits until that date. Cancelling a subscription does not entitle you to a refund
+      for the current period unless required by applicable law or Apple's refund policies.
+    </p>
+
+    <h3>4.4 Free Trials</h3>
+    <p>
+      Ukodes may from time to time offer a free trial period for new subscribers. If a free trial is
+      offered, it will be clearly identified before you begin the subscription process, along with the
+      price that will be charged at the end of the trial.
+    </p>
+    <p>
+      Unless you cancel before the free trial period ends, the subscription will automatically convert
+      to a paid subscription and your Apple ID will be charged the applicable subscription fee. You may
+      only use a free trial once per subscription product, per Apple ID.
+    </p>
+
+    <h3>4.5 Refunds</h3>
+    <p>
+      All subscription purchases are final and non-refundable, except as required by applicable law
+      or as provided by Apple's refund policies. If you believe you are entitled to a refund, you
+      must submit your request directly to Apple through the App Store, as Apple handles all billing
+      and payment processing.
+    </p>
+    <p>
+      To request a refund from Apple: visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>
+      or contact Apple Support directly.
+    </p>
+
+    <h3>4.6 Price Changes</h3>
+    <p>
+      Ukodes reserves the right to change subscription prices. We will provide at least
+      <strong>30 days' notice</strong> of any price change through an in-app notice or notification.
+      If you do not cancel your subscription before the price change takes effect, you consent to the
+      new subscription price. Apple may also require you to re-confirm the new price before the
+      renewal is processed.
+    </p>
+  </section>
+
+  <!-- 5. Free Tier & Advertising -->
+  <section id="free-tier">
+    <h2>5. Free Tier &amp; Advertising</h2>
+    <p>
+      Colorcraft is available as a free download with all coloring content accessible to all users.
+      Free users (those without an active subscription) will see advertisements served through
+      <strong>Google AdMob</strong> within the App. Advertisements may appear on the home screen,
+      between completed sessions, or as optional rewarded ads.
+    </p>
+    <p>
+      Ukodes does not control the specific content of third-party advertisements displayed through
+      AdMob and is not responsible for the products, services, or claims made in any such
+      advertisement. Advertisements are provided by Google's systems based on applicable targeting
+      parameters; Ukodes is not liable for the accuracy, legality, or appropriateness of ad content.
+    </p>
+    <p>
+      By using the free tier, you acknowledge and consent to the display of advertisements. If you
+      prefer an ad-free experience, you may purchase a subscription as described in Section 4.
+    </p>
+  </section>
+
+  <!-- 6. Acceptable Use -->
+  <section id="acceptable-use">
+    <h2>6. Acceptable Use</h2>
+    <p>
+      You agree to use the App only for lawful purposes and in a manner that does not infringe the
+      rights of others or restrict their use and enjoyment of the App. Without limitation, you agree
+      not to:
+    </p>
+    <ul>
+      <li>Copy, reproduce, or redistribute any part of the App or its content for commercial purposes;</li>
+      <li>Scrape, crawl, spider, or otherwise systematically extract content or data from the App;</li>
+      <li>Attempt to reverse engineer, decompile, or disassemble the App or any portion thereof;</li>
+      <li>Circumvent, disable, or interfere with any security or access-control features of the App;</li>
+      <li>Use the App in any way that could damage, disable, overburden, or impair its functionality;</li>
+      <li>Attempt to gain unauthorized access to any systems or networks connected to the App;</li>
+      <li>Use the App to transmit any unsolicited or unauthorized communications;</li>
+      <li>Violate any applicable local, national, or international law or regulation.</li>
+    </ul>
+    <p>
+      Colorcraft is intended for personal, non-commercial use only. Any commercial exploitation of
+      the App or its content — including but not limited to selling, reselling, or sublicensing the
+      App — is strictly prohibited.
+    </p>
+  </section>
+
+  <!-- 7. User-Generated Content -->
+  <section id="user-content">
+    <h2>7. User-Generated Content</h2>
+    <p>
+      Colorcraft does not include any social features, community uploads, or mechanisms for users to
+      share content with other users through our servers. The "content" you create — specifically,
+      your completed colorings resulting from your use of the App — is generated locally on your device
+      and stored in your personal iCloud account via Apple's CloudKit infrastructure.
+    </p>
+    <p>
+      Ukodes does not have access to your completed colorings and does not process, monitor, or
+      store them on any Ukodes-controlled servers. Your completed colorings remain entirely within
+      your own device and iCloud account. You retain full ownership of your personal coloring work.
+    </p>
+    <p>
+      When you choose to share or export a completed coloring (for example, saving to your Photos
+      library or sharing via the iOS share sheet), such sharing occurs entirely through Apple's
+      standard iOS mechanisms and is subject to the terms and privacy policies of the receiving
+      platform or application.
+    </p>
+  </section>
+
+  <!-- 8. Disclaimer of Warranties -->
+  <section id="warranties">
+    <h2>8. Disclaimer of Warranties</h2>
+    <p>
+      THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTY OF ANY KIND,
+      EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, UKODES
+      EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:
+    </p>
+    <ul>
+      <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement;</li>
+      <li>Any warranty that the App will be uninterrupted, error-free, or free of viruses or other harmful components;</li>
+      <li>Any warranty regarding the accuracy, reliability, completeness, or timeliness of App content;</li>
+      <li>Any warranty that defects in the App will be corrected;</li>
+      <li>Any warranty arising from course of dealing, usage, or trade practice.</li>
+    </ul>
+    <p>
+      Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions,
+      the above exclusions apply to the fullest extent permitted by law.
+    </p>
+    <div class="warning-box">
+      Your use of the App is at your sole risk. If you are dissatisfied with any portion of the App
+      or with these Terms, your sole and exclusive remedy is to discontinue use of the App.
+    </div>
+  </section>
+
+  <!-- 9. Limitation of Liability -->
+  <section id="liability">
+    <h2>9. Limitation of Liability</h2>
+    <p>
+      TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL UKODES, ITS OFFICERS,
+      DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+      CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES ARISING OUT OF OR RELATING TO YOUR USE OF OR
+      INABILITY TO USE THE APP, INCLUDING BUT NOT LIMITED TO:
+    </p>
+    <ul>
+      <li>Loss of data, coloring progress, or completed artwork;</li>
+      <li>Loss of profits, revenue, or business opportunities;</li>
+      <li>Loss of goodwill;</li>
+      <li>Service interruptions or App unavailability;</li>
+      <li>Third-party content displayed through advertising;</li>
+      <li>Unauthorized access to or alteration of your data.</li>
+    </ul>
+    <p>
+      IN ALL CASES, UKODES'S TOTAL CUMULATIVE LIABILITY TO YOU FOR ANY CLAIMS ARISING OUT OF OR
+      RELATING TO THESE TERMS OR THE APP SHALL NOT EXCEED THE GREATER OF:
+    </p>
+    <ul>
+      <li>The total amount you have paid to Ukodes (via in-app purchases) in the
+          <strong>twelve (12) months immediately preceding the claim</strong>; or</li>
+      <li><strong>Ten US Dollars (USD $10.00)</strong> if you have not made any purchases.</li>
+    </ul>
+    <p>
+      Some jurisdictions do not allow limitations on liability for certain types of damages,
+      so some or all of the above limitations may not apply to you. In those jurisdictions,
+      Ukodes's liability is limited to the maximum extent permitted by law.
+    </p>
+  </section>
+
+  <!-- 10. Governing Law -->
+  <section id="governing-law">
+    <h2>10. Governing Law &amp; Dispute Resolution</h2>
+
+    <h3>10.1 Governing Law</h3>
+    <p>
+      These Terms and any dispute arising out of or relating to them or your use of the App shall be
+      governed by and construed in accordance with the laws of <strong>Ukraine</strong>, without
+      regard to its conflict-of-law principles. This choice of law does not affect any mandatory
+      consumer protection rights you may have under the laws of your country of residence.
+    </p>
+
+    <h3>10.2 Dispute Resolution</h3>
+    <p>
+      In the event of any dispute, claim, or controversy arising out of or relating to these Terms
+      or the App, the parties agree to first attempt to resolve the matter through good-faith
+      negotiation. To initiate this process, please contact us at
+      <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a> describing your concern in detail.
+      We will endeavor to respond within 15 business days and work with you to reach a mutually
+      acceptable resolution.
+    </p>
+    <p>
+      If informal resolution is not achieved within 60 days of the initial written notice, either
+      party may pursue available legal remedies. If you are a consumer in a country that requires
+      local courts or mandatory arbitration, those provisions take precedence over this clause to
+      the extent required by applicable law.
+    </p>
+
+    <h3>10.3 EU and UK Consumer Rights</h3>
+    <p>
+      If you are a consumer residing in the European Union or the United Kingdom, you may also have
+      the right to use the EU Online Dispute Resolution platform at
+      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>,
+      or to bring proceedings before your local courts. Nothing in these Terms limits your rights
+      under applicable mandatory consumer protection law.
+    </p>
+  </section>
+
+  <!-- 11. Changes to Terms -->
+  <section id="changes">
+    <h2>11. Changes to These Terms</h2>
+    <p>
+      Ukodes reserves the right to modify these Terms at any time. For changes that are material
+      — such as new restrictions on use, changes to limitation of liability, or introduction of
+      new paid features — we will provide at least <strong>30 days' notice</strong> by posting
+      the updated Terms within the App or at
+      <a href="https://colorcraft.app/terms">https://colorcraft.app/terms</a>, and by displaying
+      an in-app banner or notification.
+    </p>
+    <p>
+      Non-material changes (such as clarifications, typo corrections, or updates to contact
+      information) may be made without advance notice.
+    </p>
+    <p>
+      Your continued use of the App after the effective date of the revised Terms constitutes
+      your acceptance of those changes. If you do not agree to the updated Terms, you must stop
+      using the App before the changes take effect.
+    </p>
+    <p>
+      We encourage you to review these Terms periodically. The "Last Updated" date at the top of
+      this page always reflects the most recent revision.
+    </p>
+  </section>
+
+  <!-- 12. Contact -->
+  <section id="contact">
+    <h2>12. Contact Us</h2>
+    <p>
+      If you have any questions, concerns, or requests relating to these Terms of Service,
+      please reach out to us:
+    </p>
+    <ul>
+      <li><strong>Developer:</strong> Ukodes (Andrii)</li>
+      <li><strong>Email:</strong> <a href="mailto:dudavx85@gmail.com">dudavx85@gmail.com</a></li>
+      <li><strong>Terms URL:</strong> <a href="https://colorcraft.app/terms">https://colorcraft.app/terms</a></li>
+      <li><strong>Privacy Policy:</strong> <a href="https://colorcraft.app/privacy">https://colorcraft.app/privacy</a></li>
+    </ul>
+    <p>
+      We aim to respond to all inquiries within 30 days of receipt.
+    </p>
+  </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div>© 2026 Ukodes. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

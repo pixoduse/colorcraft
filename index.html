@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorcraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --amber:   #F5A623;
+      --coral:   #E8705A;
+
+      --bg:        #FFFDF9;
+      --surface:   #FFF8F0;
+      --border:    #F0E4D0;
+      --text:      #2C2416;
+      --text-mute: #6B5A45;
+      --link:      #2196F3;
+
+      --header-h: 56px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:        #1A1A1A;
+        --surface:   #242018;
+        --border:    #3A3226;
+        --text:      #E8E0D5;
+        --text-mute: #A09080;
+        --link:      #2196F3;
+        --amber:     #D4901E;
+        --coral:     #C95E48;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: #2196F3;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .site-header .header-title {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 16px 64px;
+      text-align: center;
+    }
+
+    .app-title {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+    }
+    .app-tagline {
+      font-size: 18px;
+      color: var(--text-mute);
+      margin-bottom: 40px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .links a {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 20px;
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .links a:hover { text-decoration: underline; }
+
+    .footer-note {
+      margin-top: 48px;
+      font-size: 13px;
+      color: var(--text-mute);
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <span class="header-title">Colorcraft</span>
+</header>
+
+<main class="page-wrap">
+  <h1 class="app-title">Colorcraft</h1>
+  <p class="app-tagline">A relaxing paint-by-number coloring book for iPhone</p>
+
+  <nav class="links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="support.html">Support</a>
+  </nav>
+
+  <p class="footer-note">© 2026 Andrii Duda · <a href="mailto:pixoduse@gmail.com" style="color: var(--link); text-decoration: none;">pixoduse@gmail.com</a></p>
+</main>
+</body>
+</html>
