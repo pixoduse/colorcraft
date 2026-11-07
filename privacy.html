@@ -199,7 +199,7 @@
 
   <h1 class="doc-title">Privacy Policy</h1>
   <p class="doc-subtitle">Colorcraft by Ukodes</p>
-  <span class="date-badge">Last Updated: October 28, 2026 · Effective: October 28, 2026</span>
+  <span class="date-badge">Last Updated: November 8, 2026 · Effective: November 8, 2026</span>
 
   <!-- 1. Introduction -->
   <section id="introduction">
@@ -287,6 +287,25 @@
       For subscription management, cancellation, and billing inquiries, please refer to your
       Apple ID subscription settings or Apple's support channels.
     </p>
+
+    <h3>2.5 Usage Analytics and Crash Reports (Firebase)</h3>
+    <p>
+      To understand how Colorcraft is used and to fix problems, the app uses
+      <strong>Google Analytics for Firebase</strong> and <strong>Firebase Crashlytics</strong>,
+      both provided by Google. They collect:
+    </p>
+    <ul>
+      <li><strong>App interactions</strong> — for example which screens you open, which pictures you start, finish or leave and how far you got, hints and sharing used, when the subscription screen is shown, and the app settings you choose (sounds, theme, accessibility options). The content of your artwork is never sent.</li>
+      <li><strong>Purchase events</strong> — the subscription product and price reported by Apple's StoreKit. No payment details.</li>
+      <li><strong>Device and app information</strong> — a random app instance identifier, device model, iOS and app version, language, and approximate country derived from your IP address. If you allow tracking (ATT), Google may also receive your IDFA.</li>
+      <li><strong>Crash reports</strong> — the technical state of the app at the moment of a crash (stack trace, device model, iOS version).</li>
+    </ul>
+    <p>
+      We look at this data only in aggregate, to decide which pictures and features to improve and to
+      fix crashes. We do not use it to identify you and do not combine it with other information about
+      you. In the EEA, the United Kingdom and Switzerland, analytics storage follows your answer to the
+      consent message described in Section 5.
+    </p>
   </section>
 
   <!-- 3. How We Use Information -->
@@ -297,7 +316,7 @@
       <li><strong>Rendering and syncing your coloring progress</strong> — SwiftData and iCloud enable your artwork to persist and sync across your devices without requiring an account.</li>
       <li><strong>Serving advertisements to free users</strong> — AdMob data enables us to offer a free tier of the app supported by advertising revenue.</li>
       <li><strong>Subscription verification</strong> — StoreKit transaction confirmation enables us to unlock premium content for paying subscribers.</li>
-      <li><strong>Improving app performance</strong> — Aggregate, non-identifiable usage patterns may be used to identify crashes or areas for improvement.</li>
+      <li><strong>Improving the app and fixing crashes</strong> — Firebase analytics and crash reports, looked at in aggregate, show which pictures and features work well and where the app fails.</li>
     </ul>
     <p>
       We do <strong>not</strong> sell, rent, or trade your personal information to any third party
@@ -317,6 +336,14 @@
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
       and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob's data practices</a>
       for full details.
+    </p>
+
+    <h3>Google Analytics for Firebase and Firebase Crashlytics</h3>
+    <p>
+      Google's app analytics and crash reporting services, used to measure how the app is used and to
+      fix crashes. See
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy and Security in Firebase</a>
+      and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
     </p>
 
     <h3>Apple iCloud</h3>
@@ -354,7 +381,9 @@
       When you open Colorcraft in the EEA, the United Kingdom or Switzerland, we ask for your consent to
       personalized advertising through Google's consent message before any ads are requested. You can
       consent, decline, or choose individual purposes and partners. If you decline, you may still see
-      non-personalized ads.
+      non-personalized ads. The same choice applies to analytics: until you consent, and if you decline,
+      Colorcraft stores no analytics identifiers on your device and Firebase receives only cookieless,
+      aggregate signals.
     </p>
     <p>
       To exercise any of these rights, contact us at
@@ -393,7 +422,7 @@
     <p>
       Colorcraft is a general-audience app and is not directed at children. We do not ask for your age.
       Ads in Colorcraft are limited to content suitable for a general audience (Google AdMob maximum ad
-      content rating PG), and ads from sensitive categories such as gambling, alcohol and dating are
+      content rating G), and ads from sensitive categories such as gambling, alcohol and dating are
       blocked.
     </p>
     <p>
@@ -445,6 +474,11 @@
         data per
         <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's data retention policies</a>,
         which are independent of Ukodes.
+      </li>
+      <li>
+        <strong>Analytics and crash data (Firebase / Google):</strong> Event-level analytics data is
+        kept for 2 months and crash reports for 90 days, after which Google deletes them; aggregated
+        reports without identifiers may be kept longer.
       </li>
       <li>
         <strong>Subscription records:</strong> Apple retains transaction records for subscriptions
